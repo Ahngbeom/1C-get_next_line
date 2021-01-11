@@ -6,11 +6,21 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 14:41:58 by bahn              #+#    #+#             */
-/*   Updated: 2021/01/11 14:41:09 by bahn             ###   ########.fr       */
+/*   Updated: 2021/01/11 14:48:41 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+int		ft_strlen(char *str)
+{
+	int count;
+
+	count = 0;
+	while (*(str++) != '\0')
+		count++;
+	return (count);
+}
 
 int		find_line_feed(char *stc_buff)
 {

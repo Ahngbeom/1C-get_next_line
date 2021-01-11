@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 15:00:24 by bahn              #+#    #+#             */
-/*   Updated: 2021/01/11 14:40:32 by bahn             ###   ########.fr       */
+/*   Updated: 2021/01/11 14:50:02 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@
 
 int			get_next_line(int fd, char **line);
 
-int			ft_strlen(char *str);
 char		*ft_strdup(char *src);
 size_t		ft_strlcpy(char *dest, char *src, size_t size);
 size_t		ft_strlcat(char *dest, char *src, size_t size);

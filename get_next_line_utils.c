@@ -6,21 +6,11 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 22:29:41 by bahn              #+#    #+#             */
-/*   Updated: 2021/01/11 14:42:44 by bahn             ###   ########.fr       */
+/*   Updated: 2021/01/11 14:49:50 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-int		ft_strlen(char *str)
-{
-	int count;
-
-	count = 0;
-	while (*(str++) != '\0')
-		count++;
-	return (count);
-}
 
 size_t	ft_strlcpy(char *dest, char *src, size_t size)
 {
