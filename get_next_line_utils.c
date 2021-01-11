@@ -6,11 +6,21 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 22:29:41 by bahn              #+#    #+#             */
-/*   Updated: 2021/01/11 14:49:50 by bahn             ###   ########.fr       */
+/*   Updated: 2021/01/11 23:28:48 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+int             ft_strlen(char *str)
+{
+	int count;
+
+	count = 0;
+	while (*(str++) != '\0')
+		count++;
+	return (count);
+}
 
 size_t	ft_strlcpy(char *dest, char *src, size_t size)
 {
@@ -52,29 +62,6 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 	return (dest_len + ft_strlen(src));
 }
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	size_t	i;
-	char	*ptr;
-
-	i = 0;
-	if ((size_t)ft_strlen((char *)s) < start)
-	{
-		if (!(ptr = malloc(1)))
-			return (NULL);
-		ptr[i] = '\0';
-	}
-	else
-	{
-		if (!(ptr = malloc(len + 1)))
-			return (NULL);
-		while (i < len && s[start] != '\0')
-			ptr[i++] = s[start++];
-		ptr[i] = '\0';
-	}
-	return (ptr);
-}
-
 char	*ft_strdup(char *src)
 {
 	int		i;
@@ -82,13 +69,15 @@ char	*ft_strdup(char *src)
 	char	*cpy;
 
 	i = 0;
-	src_len = 0;
+	src_len = ft_strlen(src);
+	/*
 	while (src[src_len] != '\0')
 		src_len++;
-	cpy = malloc(sizeof(char) * src_len + 1);
+	*/
+	cpy = (char *)malloc(sizeof(char) * src_len + 1);
 	if (!cpy)
 		return (NULL);
-	while (i < src_len)
+	while (src[i] != '\0')
 	{
 		cpy[i] = src[i];
 		i++;
@@ -97,7 +86,7 @@ char	*ft_strdup(char *src)
 	return (cpy);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	size_t	s1_len;
 	size_t	s2_len;
@@ -112,5 +101,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	ft_strlcpy(ptr, (char *)s1, s1_len + 1);
 	ft_strlcat(ptr, (char *)s2, s1_len + s2_len + 1);
+	free(s1);
 	return (ptr);
 }

@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 15:00:24 by bahn              #+#    #+#             */
-/*   Updated: 2021/01/11 14:50:02 by bahn             ###   ########.fr       */
+/*   Updated: 2021/01/11 23:20:10 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@
 
 int			get_next_line(int fd, char **line);
 
+int             ft_strlen(char *str);
 char		*ft_strdup(char *src);
 size_t		ft_strlcpy(char *dest, char *src, size_t size);
 size_t		ft_strlcat(char *dest, char *src, size_t size);
-char		*ft_substr(char const *s, unsigned int start, size_t len);
-char		*ft_strjoin(char const *s1, char const *s2);
+char		*ft_strjoin(char *s1, char *s2);
 
 #endif
