@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/09 15:00:24 by bahn              #+#    #+#             */
-/*   Updated: 2021/01/12 14:27:44 by bahn             ###   ########.fr       */
+/*   Created: 2021/01/12 14:36:13 by bahn              #+#    #+#             */
+/*   Updated: 2021/01/12 14:36:18 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -26,6 +26,7 @@
 # endif
 
 int		get_next_line(int fd, char **line);
+
 int		ft_strlen(char *str);
 char		*ft_strdup(char *src);
 size_t		ft_strlcpy(char *dest, char *src, size_t size);
