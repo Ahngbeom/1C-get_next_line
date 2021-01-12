@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 14:36:13 by bahn              #+#    #+#             */
-/*   Updated: 2021/01/13 00:25:44 by bahn             ###   ########.fr       */
+/*   Updated: 2021/01/13 00:45:53 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 # include <unistd.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10000000
+#  define BUFFER_SIZE 9999
 # endif
 
 # ifndef OPEN_MAX
-#  define OPEN_MAX 10
+#  define OPEN_MAX 100
 # endif
 
 int			get_next_line(int fd, char **line);
