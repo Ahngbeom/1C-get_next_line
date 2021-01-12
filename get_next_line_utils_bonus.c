@@ -6,13 +6,13 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 14:25:08 by bahn              #+#    #+#             */
-/*   Updated: 2021/01/12 14:29:12 by bahn             ###   ########.fr       */
+/*   Updated: 2021/01/13 00:26:28 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 
-int	ft_strlen(char *str)
+int		ft_strlen(char *str)
 {
 	int count;
 

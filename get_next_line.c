@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 14:41:58 by bahn              #+#    #+#             */
-/*   Updated: 2021/01/12 14:31:50 by bahn             ###   ########.fr       */
+/*   Updated: 2021/01/13 00:23:13 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (ptr);
 }
 
-int	find_line_feed(char *stc_buff)
+int		find_line_feed(char *stc_buff)
 {
 	int	i;
 
@@ -49,7 +49,7 @@ int	find_line_feed(char *stc_buff)
 	return (-1);
 }
 
-int	extract_line(char **stc_buff, char **line, int lf_idx)
+int		extract_line(char **stc_buff, char **line, int lf_idx)
 {
 	char	*temp;
 
@@ -66,7 +66,7 @@ int	extract_line(char **stc_buff, char **line, int lf_idx)
 	return (1);
 }
 
-int	end_of_file(char **stc_buff, char **line, int read_size)
+int		end_of_file(char **stc_buff, char **line, int read_size)
 {
 	int	lf_idx;
 
@@ -84,7 +84,7 @@ int	end_of_file(char **stc_buff, char **line, int read_size)
 	return (0);
 }
 
-int	get_next_line(int fd, char **line)
+int		get_next_line(int fd, char **line)
 {
 	static	char	*stc_buff[OPEN_MAX];
 	char			buff[BUFFER_SIZE + 1];
