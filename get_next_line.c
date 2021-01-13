@@ -6,7 +6,7 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 14:41:58 by bahn              #+#    #+#             */
-/*   Updated: 2021/01/13 00:34:38 by bahn             ###   ########.fr       */
+/*   Updated: 2021/01/13 14:51:27 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,11 @@ int		end_of_file(char **stc_buff, char **line, int read_size)
 		*stc_buff = NULL;
 		return (0);
 	}
-	*line = ft_strdup("");
-	return (0);
+	else
+	{
+		*line = ft_strdup("");
+		return (0);
+	}
 }
 
 int		get_next_line(int fd, char **line)
