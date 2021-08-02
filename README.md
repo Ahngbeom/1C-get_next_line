@@ -1,4 +1,6 @@
-# 1C-get_next_line# get_next_line의 목적
+# 1C-get_next_line
+
+# get_next_line의 목적
 
     get_next_line은 반복문 안에서 외부 파일의 내용을 
     
