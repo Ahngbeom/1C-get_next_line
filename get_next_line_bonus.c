@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/12 14:24:51 by bahn              #+#    #+#             */
-/*   Updated: 2021/01/13 14:42:10 by bahn             ###   ########.fr       */
+/*   Created: 2021/01/09 14:41:58 by bahn              #+#    #+#             */
+/*   Updated: 2021/08/31 17:15:45 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,15 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if ((size_t)ft_strlen((char *)s) < start)
 	{
-		if (!(ptr = malloc(1)))
+		ptr = malloc(1);
+		if (ptr == NULL)
 			return (NULL);
 		ptr[i] = '\0';
 	}
 	else
 	{
-		if (!(ptr = malloc(len + 1)))
+		ptr = malloc(len + 1);
+		if (ptr == NULL)
 			return (NULL);
 		while (i < len && s[start] != '\0')
 			ptr[i++] = s[start++];
@@ -35,7 +37,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (ptr);
 }
 
-int		find_line_feed(char *stc_buff)
+int	find_line_feed(char *stc_buff)
 {
 	int	i;
 
@@ -49,7 +51,7 @@ int		find_line_feed(char *stc_buff)
 	return (-1);
 }
 
-int		extract_line(char **stc_buff, char **line, int lf_idx)
+int	extract_line(char **stc_buff, char **line, int lf_idx)
 {
 	char	*temp;
 
@@ -66,13 +68,14 @@ int		extract_line(char **stc_buff, char **line, int lf_idx)
 	return (1);
 }
 
-int		end_of_file(char **stc_buff, char **line, int read_size)
+int	end_of_file(char **stc_buff, char **line, int read_size)
 {
 	int	lf_idx;
 
 	if (read_size < 0)
 		return (-1);
-	if (*stc_buff != NULL && ((lf_idx = find_line_feed(*stc_buff)) >= 0))
+	lf_idx = find_line_feed(*stc_buff);
+	if (*stc_buff != NULL && lf_idx >= 0)
 		return (extract_line(stc_buff, line, lf_idx));
 	else if (*stc_buff != NULL)
 	{
@@ -87,24 +90,27 @@ int		end_of_file(char **stc_buff, char **line, int read_size)
 	}
 }
 
-int		get_next_line(int fd, char **line)
+int	get_next_line(int fd, char **line)
 {
-	static	char	*stc_buff[OPEN_MAX];
+	static char		*stc_buff[OPEN_MAX];
 	char			buff[BUFFER_SIZE + 1];
 	ssize_t			read_size;
 	ssize_t			lf_idx;
 
 	if (fd < 0 || !line || BUFFER_SIZE <= 0 || fd >= OPEN_MAX)
 		return (-1);
-	while ((read_size = read(fd, buff, BUFFER_SIZE)) > 0)
+	read_size = read(fd, buff, BUFFER_SIZE);
+	while (read_size > 0)
 	{
 		buff[read_size] = '\0';
 		if (!stc_buff[fd])
 			stc_buff[fd] = ft_strdup(buff);
 		else
 			stc_buff[fd] = ft_strjoin(stc_buff[fd], buff);
-		if ((lf_idx = find_line_feed(stc_buff[fd])) >= 0)
+		lf_idx = find_line_feed(stc_buff[fd]);
+		if (lf_idx >= 0)
 			return (extract_line(&stc_buff[fd], line, lf_idx));
+		read_size = read(fd, buff, BUFFER_SIZE);
 	}
 	return (end_of_file(&stc_buff[fd], line, read_size));
 }

@@ -6,15 +6,15 @@
 /*   By: bahn <bahn@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 22:29:41 by bahn              #+#    #+#             */
-/*   Updated: 2021/01/13 00:26:08 by bahn             ###   ########.fr       */
+/*   Updated: 2021/08/31 17:17:17 by bahn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int		ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	while (*(str++) != '\0')
@@ -24,8 +24,8 @@ int		ft_strlen(char *str)
 
 size_t	ft_strlcpy(char *dest, char *src, size_t size)
 {
-	size_t i;
-	size_t src_length;
+	size_t	i;
+	size_t	src_length;
 
 	i = 0;
 	src_length = (size_t)ft_strlen(src);
