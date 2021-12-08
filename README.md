@@ -1,4 +1,4 @@
-# 1C-get_next_line
+# get_next_line [![bahn's 42Project Score](https://badge42.herokuapp.com/api/project/bahn/get_next_line)](https://github.com/JaeSeoKim/badge42)
 
 # get_next_line의 목적
 
