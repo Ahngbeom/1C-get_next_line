@@ -1,5 +1,4 @@
-# get_next_line [![bahn's 42Project Score](https://badge42.herokuapp.com/api/project/bahn/get_next_line)](https://github.com/JaeSeoKim/badge42)
-
+# get_next_line [![bahn's 42 get_next_line Score](https://badge42.vercel.app/api/v2/cl1n6fb2j003009l0lfanbfyx/project/2065203)](https://github.com/JaeSeoKim/badge42)
 # get_next_line의 목적
 
     get_next_line은 반복문 안에서 외부 파일의 내용을 
